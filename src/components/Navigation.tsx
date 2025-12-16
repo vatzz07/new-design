@@ -47,9 +47,13 @@ export function Navigation() {
             <Link to="/about-me">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="text-xl sm:text-2xl font-league font-bold text-white cursor-pointer"
+                className="cursor-pointer"
               >
-                SRIVATSAN<span className="text-[#FFD700]"> P</span>
+                <img 
+                  src="/images/jlb.png" 
+                  alt="JLB Logo" 
+                  className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+                />
               </motion.div>
             </Link>
 

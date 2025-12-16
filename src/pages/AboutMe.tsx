@@ -1,17 +1,8 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Palette, Code, Brain, Users, Target, Award } from 'lucide-react';
-import profileImage from 'figma:asset/d6c1e07a04bef4396bd8b586add46123114b3446.png';
+import { ArrowRight } from 'lucide-react';
 
 export function AboutMe() {
-  const skills = [
-    { icon: Palette, title: "Visual Design", description: "Creating engaging interfaces with tools like Figma, Adobe XD, and Photoshop" },
-    { icon: Users, title: "User Research", description: "Understanding user needs through research and interaction design" },
-    { icon: Code, title: "Front-End Development", description: "Building responsive interfaces with HTML, CSS, JavaScript, and React" },
-    { icon: Brain, title: "Accessibility", description: "Ensuring inclusive design for all users and devices" },
-    { icon: Target, title: "Information Architecture", description: "Structuring content and navigation for optimal user experience" },
-    { icon: Award, title: "Responsive Design", description: "Creating seamless experiences across all devices and platforms" }
-  ];
 
   return (
     <>
@@ -32,35 +23,43 @@ export function AboutMe() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <h1 className="text-6xl lg:text-8xl font-league font-bold mb-6 leading-none text-white">
-                  SRIVATSAN<span className="text-[#FFD700]"> P</span>
+                  Dr.<span className="text-[#FFD700]">Sukumar</span> Balakrishnan
                 </h1>
                 <div className="w-32 h-1 bg-[#FFD700] mb-6"></div>
               </motion.div>
 
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-2xl lg:text-3xl text-[#FFD700] font-mono mb-8"
+                className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8"
               >
-                "Design is not just what it looks like. Design is how it works."
-              </motion.p>
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="bg-[#FFD700] text-black px-6 py-3 text-base sm:text-lg font-bold border-2 border-white hover:bg-white hover:text-black transition-all duration-300 shadow-[4px_4px_0px_0px_white] hover:shadow-[4px_4px_0px_0px_#FFD700] cursor-default text-center"
+                >
+                  BELIEVER
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="bg-white text-black px-6 py-3 text-base sm:text-lg font-bold border-2 border-[#FFD700] hover:bg-[#FFD700] hover:text-black transition-all duration-300 shadow-[4px_4px_0px_0px_#FFD700] hover:shadow-[4px_4px_0px_0px_white] cursor-default text-center"
+                >
+                  HUMANITARIAN
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  className="bg-gray-900 text-[#FFD700] px-6 py-3 text-base sm:text-lg font-bold border-2 border-[#FFD700] hover:bg-[#FFD700] hover:text-black transition-all duration-300 shadow-[4px_4px_0px_0px_#FFD700] hover:shadow-[4px_4px_0px_0px_white] cursor-default text-center"
+                >
+                  HABIT OF SUCCESS
+                </motion.div>
+              </motion.div>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-lg text-gray-300 leading-relaxed mb-12"
-              >
-                UI/UX Designer & Front End Developer passionate about creating intuitive, 
-                accessible, and engaging digital experiences that solve real-world problems.
-              </motion.p>
-
+              {/* Get In Touch Button - Desktop Only (Next to text) */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="flex flex-wrap gap-4"
+                className="hidden lg:flex flex-wrap gap-4"
               >
                 <Link to="/contact">
                   <motion.button
@@ -80,7 +79,7 @@ export function AboutMe() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex justify-center lg:justify-end"
+              className="flex flex-col items-center lg:justify-end"
             >
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 2 }}
@@ -89,13 +88,69 @@ export function AboutMe() {
               >
                 <div className="w-full max-w-md aspect-square bg-gray-900 border-4 border-[#FFD700] shadow-[12px_12px_0px_0px_white] p-4">
                   <img
-                    src={profileImage}
-                    alt="Srivatsan P"
+                    src="/images/Sukumar Balakrishnan.png"
+                    alt="Dr. Sukumar Balakrishnan"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </motion.div>
+              
+              {/* Get In Touch Button - Mobile Only (Below Image) */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex justify-center w-full mt-12 sm:mt-16 lg:hidden"
+              >
+                <Link to="/contact" className="w-full sm:w-auto">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full sm:w-auto bg-[#FFD700] text-black px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-medium border-2 border-white hover:bg-white hover:text-black transition-all duration-300 shadow-[4px_4px_0px_0px_white] hover:shadow-[4px_4px_0px_0px_#FFD700] flex items-center justify-center gap-3"
+                  >
+                    <span>Get In Touch</span>
+                    <ArrowRight size={18} className="sm:w-5 sm:h-5" />
+                  </motion.button>
+                </Link>
+              </motion.div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Logo Strip Section */}
+      <section className="w-full bg-black py-8 sm:py-10 border-y-2 border-[#FFD700] relative overflow-hidden">
+        <div className="relative w-full overflow-hidden">
+          {/* Animated Logo Strip */}
+          <div className="animate-scroll">
+            {/* First set of logos */}
+            <div className="flex items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 px-4 sm:px-8 flex-shrink-0">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((index) => (
+                <div
+                  key={`logo-${index}`}
+                  className="h-12 sm:h-16 md:h-20 w-auto px-3 sm:px-4 flex items-center justify-center flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300"
+                >
+                  {/* Logo container - replace this div with <img> tags when you have actual logos */}
+                  <div className="h-full w-auto bg-white/10 border border-[#FFD700]/20 hover:border-[#FFD700]/50 p-2 sm:p-3 flex items-center justify-center transition-all duration-300 backdrop-blur-sm">
+                    <span className="text-[#FFD700]/70 hover:text-[#FFD700] text-[10px] sm:text-xs font-jakarta font-medium whitespace-nowrap">Logo {index}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* Duplicate set for seamless loop */}
+            <div className="flex items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 px-4 sm:px-8 flex-shrink-0">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((index) => (
+                <div
+                  key={`logo-dup-${index}`}
+                  className="h-12 sm:h-16 md:h-20 w-auto px-3 sm:px-4 flex items-center justify-center flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300"
+                >
+                  {/* Logo container - replace this div with <img> tags when you have actual logos */}
+                  <div className="h-full w-auto bg-white/10 border border-[#FFD700]/20 hover:border-[#FFD700]/50 p-2 sm:p-3 flex items-center justify-center transition-all duration-300 backdrop-blur-sm">
+                    <span className="text-[#FFD700]/70 hover:text-[#FFD700] text-[10px] sm:text-xs font-jakarta font-medium whitespace-nowrap">Logo {index}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -141,12 +196,9 @@ export function AboutMe() {
               className="mb-12"
             >
               <h2 className="text-6xl lg:text-7xl font-league font-bold mb-8 leading-none text-white">
-                ABOUT ME
+                WHERE HE BEGAN
               </h2>
               <div className="w-24 h-1 bg-[#FFD700] mb-8"></div>
-              <p className="text-xl text-[#FFD700] font-mono mb-8">
-                "Design is not just what it looks like. Design is how it works."
-              </p>
             </motion.div>
 
             <motion.div
@@ -157,66 +209,42 @@ export function AboutMe() {
               className="space-y-6"
             >
               <p className="text-lg leading-relaxed text-gray-300">
-                Hi, I'm Srivatsan P, a passionate UI/UX Designer currently pursuing Computer Science 
-                and Engineering at Meenakshi College of Engineering, Chennai. I specialize in creating 
-                intuitive, accessible, and engaging digital experiences that solve real-world problems.
+                Dr. Sukumar Balakrishnan's journey began in the simplest of circumstances. From a modest home, he has risen to become a visionary entrepreneur, a committed philanthropist, and a true humanitarian. His story is one of resilience, sacrifice, and unwavering determination.
               </p>
               <p className="text-lg leading-relaxed text-gray-300">
-                Currently working as a UX Designer and Front End Developer at Ciel Infitech, where I 
-                design modern UI/UX flows and lead front-end development of global-scale React Native 
-                mobile applications, ensuring responsive, scalable, and high-performance interfaces.
+                At the heart of his journey stands his mother, Mrs. Jayalakshmi Balakrishnan. To support the family, she ran a small roadside idly shop, working tirelessly day after day. Despite financial struggles, she never allowed circumstances to stand in the way of her son's education. Her strength, discipline, and selfless sacrifices laid the foundation for Sukumar's dreams.
               </p>
               <p className="text-lg leading-relaxed text-gray-300">
-                My expertise spans from user research and interaction design to implementing designs 
-                through front-end development, ensuring seamless execution and functionality. I believe 
-                in thoughtful, hands-on design and collaboration to create meaningful digital experiences.
+                His father, Mr. Balakrishnan, was a painter by profession. The family's life took a tragic turn when he passed away suddenly. With no money even for the final rites, a young Sukumar had to borrow ₹10,000 at interest to perform his father's funeral. This painful experience became one of the earliest challenges that shaped his character and resolve.
+              </p>
+              <p className="text-lg leading-relaxed text-gray-300">
+                Life was never easy, but Sukumar never gave up. He often ate breakfast at his mother's idly shop and depended on mid-day meals at school to get through the day. With no electricity at home, he studied under streetlights and kerosene lamps, pushing forward against every limitation. Through sheer perseverance and belief, he went on to complete his degree in Mechanical Engineering—marking the beginning of a remarkable journey built from struggle, grit, and hope.
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="mt-12 grid grid-cols-2 gap-8"
-            >
-              <div className="text-center p-6 bg-gray-900 border-4 border-[#FFD700] shadow-[4px_4px_0px_0px_white]">
-                <div className="text-4xl font-bold font-league mb-2 text-white">4+</div>
-                <div className="text-[#FFD700] font-mono">Projects Completed</div>
-              </div>
-              <div className="text-center p-6 bg-gray-900 border-4 border-white shadow-[4px_4px_0px_0px_#FFD700]">
-                <div className="text-3xl font-bold font-league mb-2 text-white">Aug 2025</div>
-                <div className="text-[#FFD700] font-mono">Started at Ciel</div>
-              </div>
-            </motion.div>
           </div>
 
-          {/* Right Content - Skills Grid */}
+          {/* Right Content - Image Placeholders */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
-            {skills.map((skill, index) => (
+            {[1, 2, 3].map((index) => (
               <motion.div
-                key={skill.title}
+                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-900 p-6 border-2 border-[#FFD700] hover:border-white hover:bg-gray-800 transition-all duration-300 group"
+                whileHover={{ scale: 1.05 }}
+                className="bg-gray-900 aspect-square border-4 border-[#FFD700] hover:border-white transition-all duration-300 group overflow-hidden"
               >
-                <div className="w-12 h-12 bg-[#FFD700] group-hover:bg-white text-black flex items-center justify-center mb-4 transition-all duration-300">
-                  <skill.icon size={24} />
+                <div className="w-full h-full bg-gray-800 flex items-center justify-center">
+                  <span className="text-gray-500 text-sm font-mono">Image {index}</span>
                 </div>
-                <h3 className="text-lg font-league font-bold mb-3 text-white group-hover:text-white">
-                  {skill.title}
-                </h3>
-                <p className="text-sm text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
-                  {skill.description}
-                </p>
               </motion.div>
             ))}
           </motion.div>
